@@ -32,11 +32,14 @@ namespace FileSizeSpelunker
 
             DirectoryInfo d = new DirectoryInfo(path);
 
+            // List to store the file sizes found in loop below
             List<long> fileSizes = new List<long>();
             long totalSizeOfAllFiles = 0;
 
             var extension = txtFileExtension.Text.Trim();
 
+
+            // Check if the extension field is empty.  If it is, search all files
             if (!String.IsNullOrEmpty(extension))
             {
                 if (extension.Substring(0,1) != ".")
